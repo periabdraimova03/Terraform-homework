@@ -29,4 +29,5 @@ resource "aws_iam_user" "miyeon" {
 resource "aws_iam_user" "mina" {
   name = "mina"
 }
-
+# terraform import aws_iam_user.miyeon miyeon
+# terraform import aws_iam_user.mina mina
