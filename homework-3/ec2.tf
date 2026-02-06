@@ -23,7 +23,7 @@ data "aws_ami" "amazon" {
 
 resource "aws_instance" "ubuntu" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   subnet_id              = aws_subnet.main1.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
@@ -41,7 +41,7 @@ resource "aws_instance" "ubuntu" {
 
 resource "aws_instance" "amazon" {
   ami                    = data.aws_ami.amazon.id
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   subnet_id              = aws_subnet.main2.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
