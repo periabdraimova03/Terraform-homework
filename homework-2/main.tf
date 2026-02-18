@@ -16,11 +16,13 @@ resource "aws_iam_user" "user4" {
   name = "jisoo"
 }
 resource "aws_iam_user" "user5" {
-    depends_on = [aws_iam_user.user4]
   name = "jihyo"
 }
 resource "aws_iam_user" "user6" {
-    depends_on = [aws_iam_user.user5]
+    depends_on = [
+      aws_iam_user.user5,
+      aws_iam_user.user1
+    ]
   name = "sana"
 }
 resource "aws_iam_user" "miyeon" {
@@ -29,5 +31,7 @@ resource "aws_iam_user" "miyeon" {
 resource "aws_iam_user" "mina" {
   name = "mina"
 }
+
+#corrected 
 # terraform import aws_iam_user.miyeon miyeon
 # terraform import aws_iam_user.mina mina
